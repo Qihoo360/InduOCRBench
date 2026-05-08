@@ -25,12 +25,12 @@
 
 **InduOCRBench** 是一个面向工业级 RAG 系统的 OCR Benchmark，覆盖真实企业场景中常见的 11 类高挑战文档类型。
 
-该 Benchmark 聚焦于传统字符级 OCR 指标与真实下游 RAG 效果之间的鸿沟，从：
+该 Benchmark 聚焦于传统字符级 OCR 指标与真实下游 RAG 效果之间的鸿沟，从以下两个维度系统评估 OCR 的真实鲁棒性：
 
 - OCR 识别保真度（OCR Fidelity）
 - 端到端 RAG 检索与问答效果（RAG Impact）
 
-两个维度系统评估 OCR 的真实鲁棒性。
+
 
 ---
 
@@ -60,13 +60,10 @@
 ## 🔍 关键发现
 
 - 在标准 Benchmark（如 OmniDocBench）上接近满分的模型，在 InduOCRBench 上出现明显性能下降：
-  - PP-StructureV3 ↓ 26.4 pts
-  - PaddleOCR-VL ↓ 14.7 pts
+  - PP-StructureV3 ↓ 26.4 pts, PaddleOCR-VL ↓ 14.7 pts
 
 - **高 OCR 准确率并不意味着高 RAG 效果。**
-  - `VisualStyle` 文档 OCR Accuracy 达到 82.9%
-  - 但 RAG Accuracy 仅有 52.8%
-  - 两者存在 30.1 pts 的巨大差距。
+  - `VisualStyle` 文档 OCR Accuracy 达到 82.9%, 但 RAG Accuracy 仅有 52.8%, 两者存在 30.1 pts 的巨大差距。
 
 - OCR 引起的信息缺失，是所有 OCR-first RAG 架构中的稳定上游瓶颈。
 
@@ -88,13 +85,11 @@ ocr_data/
 
 ### 2. RAG Impact Evaluation
 
-评估 OCR 质量对端到端：
+评估 OCR 质量对RAG端到端的影响：
 
 - Retrieval
 - Generation
 - QA Accuracy
-
-的影响。
 
 对应目录：
 
@@ -432,15 +427,7 @@ unzip md.zip
 
 # 🔎 RAG Impact Evaluation
 
-RAG Evaluation 用于评估 OCR 对端到端：
-
-- Retrieval
-- Generation
-- QA
-
-效果的影响。
-
-相比字符级 OCR 指标，它更关注：
+RAG Evaluation 用于评估 OCR 质量对端到端RAG效果的影响，相比字符级 OCR 指标，它更关注：
 
 - 结构保留
 - 语义保留
@@ -479,11 +466,7 @@ RAG Evaluation 用于评估 OCR 对端到端：
 
 # ⚙️ RAG Pipeline Setup
 
-我们采用：
-
-[FlashRAG](https://github.com/RUC-NLPIR/FlashRAG)
-
-中的 Naive Pipeline。
+我们采用 [FlashRAG](https://github.com/RUC-NLPIR/FlashRAG) 中的Naive Pipeline。
 
 配置如下：
 
@@ -572,6 +555,6 @@ RAG Evaluation 用于评估 OCR 对端到端：
   eprint={2605.00911},
   archivePrefix={arXiv},
   primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2605.00911},
+  url={https://github.com/Qihoo360/InduOCRBench},
 }
 ```
