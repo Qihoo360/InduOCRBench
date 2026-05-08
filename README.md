@@ -370,6 +370,6 @@ If you use InduOCRBench in your research, please consider citing:
   eprint={2605.00911},
   archivePrefix={arXiv},
   primaryClass={cs.CV},
-  url={https://github.com/Qihoo360/InduOCRBench},
+  url={https://arxiv.org/abs/2605.00911},
 }
 ```
